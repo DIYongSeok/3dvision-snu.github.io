@@ -11,39 +11,107 @@
   <link rel="canonical" href="http://localhost:4000/">
 <link rel="shortcut icon" type ="image/x-icon" href="http://localhost:4000/images/favicon.ico">
 
+    <script>
 
+        window.addEventListener('scroll', () => {
+            const menu = document.querySelector('.navbar-fixed-top');
+        if (window.scrollY > 0) {
+            menu.classList.add('scrolled');
+        } else {
+            menu.classList.remove('scrolled');
+        }
+        });
+    </script>
+
+    <style>
+        .video-background {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1; /* Keeps it behind your content */
+            pointer-events: none; /* Prevents users from clicking the video pause/play */
+            overflow: hidden;
+        }
+
+        .video-background iframe {
+            width: 100%;
+            height: 56.25vw; /* 16:9 Aspect Ratio */
+            min-height: 100vh;
+            min-width: 177.77vh; /* 16:9 Aspect Ratio */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .video-background > .navbar-fixed-top{
+            z-index: 2;
+            position: fixed;
+        }
+
+        body{
+            padding-top : 0;
+        }
+
+        .navbar-nav > li > a{
+            background-color: transparent !important;
+            mix-blend-mode: difference;
+            color : white;
+            border-bottom : 4px solid;
+            border-color: transparent;
+            transition : 0.3s all ease;
+        }
+
+        .navbar-fixed-top.scrolled {
+            transition : 0.3s all ease;
+            border-bottom : 4px solid;
+            background-color: #f8f8f8;
+            border-color: #e7e7e7;
+        }
+
+    </style>
 
 </head>
 
 
   <body>
-    
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container-fluid">
-	<div class="navbar-header">
-	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	  </button>
-	
-    <a class="navbar-brand" href="http://localhost:4000/"><img src="http://localhost:4000/images/3dv_logo.png" height="32px"/></a>
-	</div>
-	<div class="collapse navbar-collapse" id="navbar-collapse-1">
-	  <ul class="nav navbar-nav navbar-right">
-		<li><a href="http://localhost:4000/">Home</a></li>
-		<li><a href="http://localhost:4000/members">Members</a></li>
-		<li><a href="http://localhost:4000/publications">Publications</a></li>
-		<li><a href="http://localhost:4000/class">Class&Workshop</a></li>
-		<li><a href="http://localhost:4000/research">Research</a></li>
-		<li><a href="http://localhost:4000/gallery">Gallery</a></li>
-		<!--<li><a href="http://localhost:4000/openings">Openings</a></li>-->
-	  </ul>
-	</div>
-  </div>
-</div>
+    <div class="navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a class="navbar-brand" href="http://localhost:4000/"><img src="http://localhost:4000/images/3dv_logo.png" height="32px"/></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://localhost:4000/">Home</a></li>
+                <li><a href="http://localhost:4000/members">Members</a></li>
+                <li><a href="http://localhost:4000/publications">Publications</a></li>
+                <li><a href="http://localhost:4000/class">Class&Workshop</a></li>
+                <li><a href="http://localhost:4000/research">Research</a></li>
+                <li><a href="http://localhost:4000/gallery">Gallery</a></li>
+                <!--<li><a href="http://localhost:4000/openings">Openings</a></li>-->
+            </ul>
+            </div>
+        </div>
+    </div>
 
+    
+    <div class="video-background">     
+        <iframe 
+            src="https://www.youtube.com/embed/BTyxjOO8Ilo?autoplay=1&mute=1&loop=1&playlist=BTyxjOO8Ilo&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen>
+        </iframe>
+    </div>
 
     <div class="container-fluid content">
       <div class="row">
@@ -211,6 +279,7 @@ The ultimate goal is to embrace the technology to seamlessly augment the limitat
 
       </div>
     </div>
+
 
     <div class="panel-info" style = "background-color: black">
   <div class="container-fluid">
