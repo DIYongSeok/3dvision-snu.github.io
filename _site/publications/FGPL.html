@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3D Vision Lab</title>
+  <meta name="description" content="3D Vision Lab at Seoul National University.">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/publications/FGPL">
+<link rel="shortcut icon" type ="image/x-icon" href="http://localhost:4000/images/favicon.ico">
+
+
+
+</head>
+
+
+  <body>
+
+    <div class="container-fluid content">
+      <div class="row">
+        <div id="projects" class="col-sm-12">
+  <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fully Geometric Panoramic Localization</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@300;400;500;600&amp;family=Roboto+Mono&amp;display=swap" rel="stylesheet" />
+
+    <!-- Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="http://localhost:4000/css/styles.css" />
+    <script src="http://localhost:4000/js/bulma_toggle.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/5fd1dd8417.js" crossorigin="anonymous"></script>
+
+    <!-- Academicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  </head>
+
+  <body>
+    <!-- logo img -->
+    <nav class="navbar logo">
+      <div class="navbar-brand logo">
+        <a class="navbar-item logo" href="https://3d.snu.ac.kr/">
+          <img src="http://localhost:4000/images/3dv.png" />
+        </a>
+      </div>
+    </nav>
+
+    <!-- title / authors / icons -->
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-widescreen has-text-centered">
+          <!-- title -->
+          <h1 class="title is-size-1 is-size-2-mobile publication-title">
+            Fully Geometric Panoramic Localization
+          </h1>
+
+          <!-- authors -->
+          <div class="container is-max-desktop has-text-centered">
+            <div class="columns is-mobile is-centered is-gapless">
+              <div class="column is-2-tablet is-size-5-tablet publication-authors">
+                <a class="author-blocks" href="https://www.junhokim.xyz">Junho Kim<sup>1</sup></a>
+              </div>
+              <div class="column is-2-tablet is-size-5-tablet publication-authors">
+                <a class="author-blocks" href="https://www.linkedin.com/in/jiwon-jeong-865b2422b/?originalSubdomain=kr">Jiwon Jeong<sup>3</sup></a>
+              </div>
+              <div class="column is-2-tablet is-size-5-tablet publication-authors">
+                <a class="author-blocks" href="http://3d.snu.ac.kr/members">Young Min Kim<sup>1,2</sup></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="is-size-5-tablet publication-institute">
+            <span class="author-block"><sup>1</sup>Dept. of Electrical and Computer Engineering, Seoul National University</span><br />
+            <span class="author-block"><sup>2</sup>Interdisciplinary Program in Artificial Intelligence and INMC, Seoul National University</span><br />
+            <span class="author-block"><sup>3</sup>Dept. of Electrical Engineering, Stanford University</span>
+          </div>
+
+          <!-- icons -->
+          <div class="is-size-5 link-blocks">
+            <a class="button link-button is-rounded" href="http://localhost:4000/assets/FGPL/paper.pdf">
+              <span class="icon">
+                <i class="fa-solid fa-file"></i>
+              </span>
+              <span>Paper</span>
+            </a>
+            <a class="button link-button is-rounded" href="https://arxiv.org/abs/2308.13989">
+              <span class="icon">
+                <i class="ai ai-arxiv"></i>
+              </span>
+              <span>arXiv</span>
+            </a>
+            <a class="button link-button is-rounded" href="https://www.youtube.com/watch?v=cQ5l4rauNY0">
+              <span class="icon">
+                <i class="fa-brands fa-youtube"></i>
+              </span>
+              <span>Video</span>
+            </a>
+            <a class="button link-button is-rounded" href="https://github.com/82magnolia/panoramic-localization">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>Code</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- teasor -->
+    <section class="hero">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <img src="http://localhost:4000/assets/FGPL/overview_anime.gif" width="100%" style="display: block; margin: auto" />
+          <h2 class="subtitle has-text-centered">
+            We introduce a <b>fully geometric</b> localization algorithm that is solely based on line segments.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- content section with left-side subtitle, which is aligned to center -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- abstract -->
+        <div class="columns">
+          <div class="column is-one-fifth has-text-centered">
+            <h2 class="subtitle is-4 is-size-3-mobile has-text-weight-medium publication-keywords">Abstract</h2>
+          </div>
+          <div class="column has-text-justified">
+            <p class="content">
+              We introduce a lightweight and accurate localization method that only utilizes the geometry of 2D-3D lines.
+              Given a pre-captured 3D map, our approach localizes a panorama image, taking advantage of the holistic 360 degree view.
+              The system mitigates potential privacy breaches or domain discrepancies by avoiding trained or hand-crafted visual descriptors.
+              However, as lines alone can be ambiguous, we express distinctive yet compact spatial contexts from relationships between lines, namely the dominant directions of parallel lines and the intersection between non-parallel lines.
+              The resulting representations are efficient in processing time and memory compared to conventional visual descriptor-based methods.
+              Given the groups of dominant line directions and their intersections, we accelerate the search process to test thousands of pose candidates in less than a millisecond without sacrificing accuracy.
+              We empirically show that the proposed 2D-3D matching can localize panoramas for challenging scenes with similar structures, dramatic domain shifts or illumination changes.
+              Our fully geometric approach does not involve extensive parameter tuning or neural network training, making it a practical algorithm that can be readily deployed in the real world.              
+            </p>
+          </div>
+        </div>
+    </div>
+
+        <!-- video -->
+    <!-- (TODO: Add when ready)
+        <div class="columns">
+          <div class="column is-one-fifth has-text-centered">
+            <h2 class="subtitle is-4 is-size-3-mobile has-text-weight-medium publication-keywords">Video</h2>
+          </div>
+          <div class="column">
+            <div class="publication-video">
+              <iframe
+                src="https://www.youtube.com/embed/cQ5l4rauNY0?si=KexQ7mQW2VMcqOub"
+                allow="autoplay; encrypted-media"
+                allowfullscreen="true"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    -->
+    </section>
+
+    <!-- content section with left-side subtitle -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns">
+          <div class="column is-one-fifth">
+            <h2 class="subtitle is-4 is-size-3-mobile has-text-weight-medium publication-keywords">
+              Task Overview
+            </h2>
+          </div>
+          <div class="column has-text-justified">
+            <img src="http://localhost:4000/assets/FGPL/task_overview.png" width="100%" style="display: block; margin: auto" />
+            <p class="content">
+              We consider the task of localizing a panorama image against a 3D line map, which can be readily obtained from images or 3D scans.
+              Unlike existing panoramic localization pipelines, our method performs localization under a <b>fully geometric setup</b>, only using lines in 2D and 3D. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content section with left-side subtitle -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns">
+          <div class="column is-one-fifth">
+            <h2 class="subtitle is-4 is-size-3-mobile has-text-weight-medium publication-keywords">Step 1: Input Preparation</h2>
+          </div>
+          <div class="column has-text-justified">
+            <img src="http://localhost:4000/assets/FGPL/input_preparation.png" width="100%" style="display: block; margin: auto" />
+            <p class="content">
+              Our method exploits lines and their intersections for performing localization.
+              We first cluster lines using their principal directions in 2D and 3D, which are shown as the line colors in the figure above.
+              Then, we pairwise intersect lines from distinctive princial directions and obtain three groups of intersection points.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content section with left-side subtitle -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns">
+          <div class="column is-one-fifth">
+            <h2 class="subtitle is-4 is-size-3-mobile has-text-weight-medium publication-keywords">
+              Step 2: Pose Search with Distance Functions
+            </h2>
+          </div>
+          <div class="column has-text-justified">
+            <img src="http://localhost:4000/assets/FGPL/distance_functions.png" width="100%" style="display: block; margin: auto" />
+            <p class="content">
+              Given the initial set of lines and intersections, we perform coarse pose search by <b>comparing point and line distance functions</b>.
+              The distance functions are defined over the sphere as the geodesic distance to the nearest point or line. 
+              From uniformly sampled poses in the map, we extract poses that have similar distance function values to those in the query image. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content section with left-side subtitle -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns">
+          <div class="column is-one-fifth">
+            <h2 class="subtitle is-4 is-size-3-mobile has-text-weight-medium publication-keywords">
+              Step 3: Pose Refinement with Line Intersections
+            </h2>
+          </div>
+          <div class="column has-text-justified">
+            <img src="http://localhost:4000/assets/FGPL/pose_refinement.png" width="100%" style="display: block; margin: auto" />
+            <p class="content">
+              We refine poses by aligning lines and their intersections on the sphere.
+              First, at each pose we project 3D line segments onto the sphere.
+              Then, we perform nearest neighbor matching within each intersection point group and optimize translation by minimizing the spherical distance between the matches.
+              Finally, we refine rotation by aligning the line directions associated with each intersection point match.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column is-one-fifth">
+            <h2 class="subtitle is-4 is-size-3-mobile has-text-weight-medium publication-keywords">
+                Efficient Distance Function Comparison for Large-Scale Localization
+            </h2>
+            </div>
+            <div class="column has-text-justified">
+                To scale our pipeline for large-scale scenes, we propose an acceleration scheme for distance function comparison.
+                We find that the distance function formulation in prior works does not scale well.
+                Consider the equation below, which is the previously used formula for comparing distance functions [1].
+
+            <img src="http://localhost:4000/assets/FGPL/ldl.svg" width="80%" style="display: block; margin: auto" />
+
+                Here <img src="http://localhost:4000/assets/FGPL/rho.svg" width="5%" style="display: inline-block; margin: auto" /> denotes the robust cost function evaluated over uniformly sampled points <img src="http://localhost:4000/assets/FGPL/q.svg" width="7%" style="display: inline-block; margin: auto" /> on the sphere.
+                Notice that the 3D distance function term is dependent on rotations.
+
+            <img src="http://localhost:4000/assets/FGPL/rotation_problem.png" width="100%" style="display: block; margin: auto" />
+
+                This is problematic in large-scale scenarios, as the principal directions used for extracting the rotation pool varies for each query and scene.
+                Therefore we propose a modified comparison formula, where the <b>rotation is factored out</b> from the 3D distance function. 
+
+            <img src="http://localhost:4000/assets/FGPL/new_formula.svg" width="80%" style="display: block; margin: auto" />
+
+                As the 3D distance function is no longer dependent on rotation, its values can be pre-computed and cached prior to localization.
+                This largely reduces runtime and enables our method to perform fast localization while not largely sacrificing accuracy.
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns">
+      <div class="column is-one-fifth">
+        <h2 class="subtitle is-4 is-size-3-mobile has-text-weight-medium publication-keywords">
+          Localization Performance Analysis
+        </h2>
+      </div>
+      <div class="column has-text-justified">
+        <img src="http://localhost:4000/assets/FGPL/loc_results.png" width="100%" style="display: block; margin: auto" />
+
+          Our fully geometric pipeline can effectively localize in large-scale scenarios.
+          The method shows competitive performance when compared against conventional visual feature-based localization methods, while maintaining a small map size and runtime.
+
+        <img src="http://localhost:4000/assets/FGPL/lighting_robustness.png" width="100%" style="display: block; margin: auto" />
+
+          Due to the fully geometric formulation based on lines, our method is robust to lighting changes.
+          We evaluate our method under various lighting conditions, and show recall curves while shading the maximum and minimum recall values.
+          Our method attains a high recall rate while showing only a small performance deviation amidst lighting variations.
+
+      </div>
+    </div>
+</div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns">
+      <div class="column is-one-fifth">
+        <h2 class="subtitle is-4 is-size-3-mobile has-text-weight-medium publication-keywords">
+          Applicability to Floorplan Localization
+        </h2>
+      </div>
+      <div class="column has-text-justified">
+        <img src="http://localhost:4000/assets/FGPL/floorplan_vis.png" width="100%" style="display: block; margin: auto" />
+
+          As our method only exploits lines in 2D and 3D for localization, we find that it can also perform localization using floorplan maps.
+          To elaborate, we evaluate our method using the lines from floorplan maps as shown above, <b>without altering the localization hyperparameters</b>.
+
+        <img src="http://localhost:4000/assets/FGPL/floorplan_loc.png" width="100%" style="display: block; margin: auto" />
+
+          Our method performs competitively against existing floorplan localization methods, which are specifically tailored for the task.
+          Thus we expect our method to serve as a practical approach for various geometric localization setups.
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns">
+      <div class="column is-one-fifth">
+        <h2 class="subtitle is-4 is-size-3-mobile has-text-weight-medium publication-keywords">
+          Visualization of Pose Refinement
+        </h2>
+      </div>
+      <div class="column has-text-justified">
+
+          Below we show visualizations of our pose refinement process.
+          Notice how the projected 3D lines approach the query image lines as the intersection points get aligned.
+
+        <img src="http://localhost:4000/assets/FGPL/opt_anime.gif" width="100%" style="display: block; margin: auto" />
+        <img src="http://localhost:4000/assets/FGPL/opt_anime1.gif" width="100%" style="display: block; margin: auto" />
+        <img src="http://localhost:4000/assets/FGPL/opt_anime2.gif" width="100%" style="display: block; margin: auto" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width is-centered has-text-centered">
+      <h2 class="subtitle is-size-3 has-text-weight-medium publication-keywords">References</h2>
+      <p class="content has-text-justified">
+        1. Junho Kim, Changwoon Choi, Hojun Jang, and Young Min Kim. <i>Ldl: Line distance functions for panoramic localization</i>, ICCV 2023
+      </p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- BibTex sectoion -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="column is-full-width is-centered has-text-centered">
+          <h2 class="subtitle is-size-3 has-text-weight-medium publication-keywords">BibTeX</h2>
+        </div>
+        <div class="box bibtex-box">
+          <pre>
+@InProceedings{Kim_2024_CVPR,
+  author    = {Kim, Junho and Jeong, Jiwon and Kim, Young Min},
+  title     = {Fully Geometric Panoramic Localization},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month     = {June},
+  year      = {2024},
+  <!-- pages     = {17882-17892} -->
+}          
+        </pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer class="footer" style="padding-top: 1rem">
+      <!-- navigation -->
+      <a role="button" class="navbar-burger" data-target="moreResearch" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+      <div class="navbar-menu" id="moreResearch">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center">
+          <div class="block is-flex" style="margin-bottom: 0px">
+            <a class="navbar-item" href="https://www.junhokim.xyz">
+              <span class="icon">
+                <i class="fas fa-home"></i>
+              </span>
+            </a>
+            <a class="navbar-item" href="https://github.com/82magnolia">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+            </a>
+          </div>
+          <div class="navbar-item has-dropdown has-dropdown-up is-hoverable">
+            <a class="navbar-link">More Research</a>
+
+            <div class="navbar-dropdown is-right">
+              <a class="navbar-item" href="https://82magnolia.github.io/piccolo/">
+                PICCOLO: Point Cloud-Centric Omnidirectional Localization
+              </a>
+              <a class="navbar-item" href="https://82magnolia.github.io/cpo/">
+                CPO: Change Robust Panorama to Point Cloud Localization
+              </a>
+              <a class="navbar-item" href="https://82magnolia.github.io/event_localization/">
+                Event-Based Visual Localization
+              </a>
+              <a class="navbar-item" href="https://82magnolia.github.io/ldl/">
+                LDL: Line Distance Functions for Panoramic Localization
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- license -->
+      <div class="content has-text-centered" style="margin-top: 1.6rem">
+        <p>
+          This website is licensed under a
+          <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+</div>
+      </div>
+    </div>
+
+    <div class="panel-info" style = "background-color: black">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8" style = " font-size:0.8em;  color: darkgrey;">  Copyright 2024, 3D Vision Laboratory, Dept. of Electrical and Computer Engineering, Seoul National University. </div>
+        <div class="col-md-8" style = " font-size:0.8em;  color: darkgrey;">
+          Contact: Room 916, Building 301, 1 Gwanak-ro, Gwanak-gu, Seoul, Republic of Korea
+        </div>
+      </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://localhost:4000/js/bootstrap.min.js"></script>
+<script src="http://localhost:4000/js/custom_style.js"></script>
+
+  </body>
+
+</html>
